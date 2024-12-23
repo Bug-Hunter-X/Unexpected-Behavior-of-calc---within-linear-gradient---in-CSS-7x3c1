@@ -1,0 +1,11 @@
+The following CSS code snippet demonstrates an unusual error related to the usage of the `calc()` function within a `linear-gradient()` function.  The issue arises when attempting to calculate a percentage-based value within the `linear-gradient()`'s stop positions.
+
+```css
+.element {
+  background-image: linear-gradient(to right, red 0%, blue calc(50% - 10px));
+}
+```
+
+The unexpected behavior is that the `calc(50% - 10px)` does not correctly compute the position of the blue color stop. Instead of placing the blue color at 40%, it may render incorrectly, sometimes overlapping with red completely or creating unexpected visual results.
+
+This unexpected behavior is due to the fact that `calc()` within `linear-gradient()` can be unreliable when mixing percentage and pixel values, particularly when subtracting pixels from a percentage.
