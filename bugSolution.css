@@ -1,0 +1,13 @@
+The solution is to avoid mixing percentage and pixel units within the `calc()` function used in the `linear-gradient()`.  A more reliable approach is to pre-calculate the exact position or use only percentage values for color stops. Here's an example:
+
+```css
+.element {
+  /* Solution 1: Pre-calculate the value */
+  background-image: linear-gradient(to right, red 0%, blue 40%);
+
+  /* Solution 2: Use only percentage values (if possible) */
+  /* Adjust percentages as needed to achieve desired visual result*/
+}
+```
+
+This avoids the problematic interaction between percentage and pixel units within the `calc()` function in the context of `linear-gradient()`.
